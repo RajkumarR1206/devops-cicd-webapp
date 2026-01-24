@@ -3,21 +3,17 @@ pipeline {
 
     stages {
 
-        stage('Install Dependencies') {
-            steps {
-                sh 'pip3 install pytest'
-            }
-        }
-
-        stage('Run Tests') {
-            steps {
-                sh 'pytest'
-            }
-        }
-
         stage('Build Docker Image') {
             steps {
-                sh 'docker build -t webapp:v1 .'
+                sh 'docker build -t webapp:test .'
+            }
+        }
+
+        stage('Run Tests in Container') {
+            steps {
+                sh '''
+                docker run --rm webapp:test pytest
+                '''
             }
         }
 
@@ -26,7 +22,7 @@ pipeline {
                 sh '''
                 docker stop webapp || true
                 docker rm webapp || true
-                docker run -d -p 80:5000 --name webapp webapp:v1
+                docker run -d -p 80:5000 --name webapp webapp:test
                 '''
             }
         }
@@ -41,3 +37,4 @@ pipeline {
         }
     }
 }
+
