@@ -3,12 +3,6 @@ pipeline {
 
     stages {
 
-        stage('Checkout Code') {
-            steps {
-                git 'https://github.com/RajkumarR1206/devops-cicd-webapp.git'
-            }
-        }
-
         stage('Install Dependencies') {
             steps {
                 sh 'pip3 install pytest'
@@ -40,10 +34,10 @@ pipeline {
 
     post {
         success {
-            echo "Deployment successful "
+            echo "Deployment successful 🚀"
         }
         failure {
-            echo "Pipeline failed "
+            echo "Pipeline failed ❌"
         }
     }
 }
