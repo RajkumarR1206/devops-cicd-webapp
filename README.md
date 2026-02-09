@@ -116,13 +116,13 @@ Node Exporter Full (ID: `1860`)
 
 ## Features Implemented
 
-* ✔ Automated build and deployment
-* ✔ Dockerized application
-* ✔ Automated testing
-* ✔ Continuous Integration & Delivery
-* ✔ Infrastructure monitoring
-* ✔ Real-time visualization
-* ✔ Cloud-based deployment
+* Automated build and deployment
+* Dockerized application
+* Automated testing
+* Continuous Integration & Delivery
+* Infrastructure monitoring
+* Real-time visualization
+* Cloud-based deployment
 
 ---
 
@@ -170,12 +170,6 @@ It reflects real-world DevOps practices used in production environments.
 * Application-level metrics
 * Alertmanager integration
 * Blue-green or rolling deployments
-
----
-
-## Author
-
-**Rajkumar R**
 
 ---
 
